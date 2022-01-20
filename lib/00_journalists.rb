@@ -1,3 +1,6 @@
+# charge la data base de handles
+require_relative '02_handles_database'
+
 # compte le nombre de handles dans un array
 def count_items(array)
   return array.count()
@@ -158,14 +161,11 @@ def perform(array)
     choice = menu
     generate_action(array,choice)
     if choice != 0
-      puts "Appuie sur une touche pour continuer"
+      puts "Appuyer sur 'Enter' pour continuer"
       rdm = gets.chomp
     end
   end while choice!=0
 end
-
-# charge la data base de handles
-require_relative 'handles_database'
 
 handles=handles_database
 perform(handles)
